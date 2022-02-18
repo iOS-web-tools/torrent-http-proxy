@@ -273,7 +273,6 @@ func (s *Web) proxyHTTP(w http.ResponseWriter, r *http.Request, src *Source, log
 			"ttfb":       wi.ttfb.Seconds(),
 			"duration":   time.Since(wi.start).Seconds(),
 			"status":     strconv.Itoa(wi.statusCode),
-			"rate":       claims["rate"].(string),
 			"session_id": sessionID,
 		})
 		if wi.GroupedStatusCode() == 500 {
